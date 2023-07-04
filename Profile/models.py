@@ -17,3 +17,5 @@ class CustomUser(AbstractUser):
     	default_related_name = 'custom_users'
     	swappable = 'AUTH_USER_MODEL'
     	app_label = 'auth'
+
+

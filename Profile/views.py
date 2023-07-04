@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 
 
-#login.html
+@csrf_protect
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')

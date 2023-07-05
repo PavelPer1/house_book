@@ -11,7 +11,7 @@
       <div class="bg-color">
        <form class="form-2" method="post">
            {% csrf_token %}
-            <h1><span class="log-in">Войти</span> или <span class="sign-up">зарегистрироваться</span></h1>
+            <h1><span class="log-in">Войти</span> или <span class="sign-up"><a href="{% url 'register' %}">зарегистрироваться</a></span></h1>
             <p class="float">
                 <label><i class="icon-user"></i>Логин</label>
                 <input type="text" name="username" placeholder="Логин или email">

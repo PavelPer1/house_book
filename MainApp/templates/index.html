@@ -12,7 +12,7 @@
         <div>
             <header class="header1">
                 <div class="logo_div">
-                    <a href="#"><img src="{% static 'images/ff.png' %}" alt="BOOKSWAP" class="logo"></a>
+                    <a href="{% url 'index' %}"><img src="{% static 'images/ff.png' %}" alt="BOOKSWAP" class="logo"></a>
                 </div>
                 <div class="menu_header">
                     <a class="menu_header1" href="#">О нас</a>
@@ -20,8 +20,12 @@
                     <a class="menu_header1" href="#">Помощь</a>
                 </div>
                 <div class='reg'>
-                    <a href="#"><nav class="login-css">Вход</nav></a>
-                    <a href="#"><nav class="register-css">Регистрация</nav></a>
+                    {% if not request.user.is_authenticated %}
+                    <a href="{% url 'profile' %}"><nav class="login-css">Вход</nav></a>
+                    <a href="{% url 'register' %}"><nav class="register-css">Регистрация</nav></a>
+                    {% else %}
+                    <a href="{% url 'profile' %}"><nav class="login-css">{{user.username}}</nav></a>
+                    {% endif %}
                 </div>
             </header>
             <div class="menu_header">
@@ -35,7 +39,11 @@
                         разделяющими вашу страсть к чтению.</h4>
                 </div>
                 <div class="header2">
-                    <nav class="register-css">Регистрация</nav>
+                    {% if not request.user.is_authenticated %}
+                    <a href="{% url 'register' %}"><nav class="register-css">Регистрация</nav></a>
+                    {% else %}
+                    <a href="{% url 'profile' %}"><nav class="register-css">{{user.username}}</nav></a>
+                    {% endif %}
                     <nav class="katalog-css">Каталог</nav>
                 </div>
                

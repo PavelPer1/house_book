@@ -40,6 +40,8 @@
         <div class="profile-value">+1234567890</div>
         <div class="profile-label">Адрес:</div>
         <div class="profile-value">123 Main St, City</div>
+        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'my-books' %}">Мои книги</a>
         <div><button class="profile-value" onclick="location.href= '{% url 'logout' %}?next=/profile'">Выйти с аккаунта</button></div>
     </div>
 </body>

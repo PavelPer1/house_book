@@ -1,7 +1,7 @@
 .login-css {
+    margin-right: 20px;
     margin-top: 10px;
     height: 20px;
-    margin-right: 35px;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
@@ -50,7 +50,7 @@
 .register-css {
     margin-top: 10px;
     height: 20px;
-    margin-right: 85px;
+    margin-right: 0;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
@@ -86,31 +86,37 @@ div{
 .menu_header{
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: center;
 }
 a{
     text-decoration: none;
     margin: 20px;
 }
 .reg{
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    margin-left: 280px;
+    justify-content: center;
+    margin: 0px;
 }
 .menu_header1{
 margin-right: 30px;
 margin-top: 30px;
 }
+.logo_div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
 
 .logo{
-    margin-right: 200px;
+
     height: 80px;
     width: 220px;
 }
 .main1{
-
-    margin-left: 200px;
 }
 
 h1{

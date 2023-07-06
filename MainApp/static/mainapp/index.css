@@ -50,7 +50,7 @@
 .register-css {
     margin-top: 10px;
     height: 20px;
-    margin-right: 0;
+    margin-right: 20;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
@@ -90,7 +90,6 @@ div{
 }
 a{
     text-decoration: none;
-    margin: 20px;
 }
 .reg{
     width: 100%;
@@ -100,8 +99,12 @@ a{
     margin: 0px;
 }
 .menu_header1{
-margin-right: 30px;
-margin-top: 30px;
+    margin-top: 30px;
+    width: 150;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
 }
 .logo_div{
     width: 100%;
@@ -159,7 +162,7 @@ h1{
         position: relative;
         display: flex;
         flex-direction: row;
-        justify-content: left;
+        justify-content: center;
      
 }
 .header3{

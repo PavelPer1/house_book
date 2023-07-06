@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/index.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.cdnfonts.com/css/commissioner-2" rel="stylesheet">
@@ -12,7 +12,7 @@
         <div>
             <header class="header1">
                 <div class="logo">
-                    <img src="ff.png" alt="BOOKSWAP" class="logo">
+                    <img src="{% static 'images/ff.png' %}" alt="BOOKSWAP" class="logo">
                 </div>
                 <div class="menu_header">
                     <a class="menu_header1">О нас</a>
@@ -40,7 +40,7 @@
                 </div>
                
             </div>
-            <div class="menu_header"> <img src="ded.jpg" class="photo"></div>
+            <div class="menu_header"> <img src="{% static 'images/ded.jpg' %}" class="photo"></div>
         </div> 
         </div>
     </body>

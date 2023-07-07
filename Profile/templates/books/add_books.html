@@ -1,0 +1,32 @@
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Добавить книгу</title>
+    <meta name="description" content="Описание страницы" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+      <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+  </head>
+  <body>
+      <div class="testbox">
+  <h1>Добавить книгу</h1>
+
+  <form method="post">
+    {% csrf_token %}
+
+  <input type="text" name="name" id="name" placeholder="Название" required/>
+
+  <input type="text" name="author" id="username" placeholder="Автор" required/>
+
+  <input type="password" name="genre" id="12" placeholder="Жанр" required/>
+
+    <input type="password" name="description" id="16" placeholder="Описание" required/>
+
+   <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
+   <input type="submit" class="button"/>
+    {{ form.errors }}
+
+  </form>
+</div>
+  </body>
+</html>

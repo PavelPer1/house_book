@@ -14,7 +14,7 @@ from Profile.forms import RegisterForm
 
 @login_required
 def login_view(request):
-    return render(request, 'profile.html')
+    return render(request, 'profile1.html')
 
 
 class RegisterView(FormView):
@@ -52,6 +52,8 @@ def add_books(request):
                      genre=genre_books,
                      description=description_books,
                      status=status_books,
+                     user_id=request.user.id
                      )
         book.save()
+
     return render(request, 'books/add_books.html')

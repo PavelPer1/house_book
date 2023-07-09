@@ -8,7 +8,7 @@
 {% block content %}
     <div class="header2">
         <div class="katalog">
-            <button class="back-css">Каталог</button>
+            <a href="{% url 'katalog' %}"><button class="back-css">Каталог</button></a>
         </div>
         <div class="b"><h1>Мои книги</h1></div>
         <div class="add"><a href="{% url 'add-books' %}"><button class="favor-css">Добавить +</button></a></div>

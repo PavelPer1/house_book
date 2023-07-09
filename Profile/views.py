@@ -2,6 +2,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.views import LoginView
+from django.core.paginator import Paginator
 from django.views.generic import CreateView
 from django.shortcuts import render, redirect
 
@@ -86,3 +87,12 @@ class CreateProfile(CreateView):
         # Associate the profile with the current user
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+
+def get_katalog(request):
+    books = Books.objects.all()
+    paginator = Paginator(books, 21)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'katalog/katalog.html', {'page_obj': page_obj})

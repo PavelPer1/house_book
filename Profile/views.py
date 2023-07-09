@@ -5,11 +5,12 @@ from django.contrib.auth.views import LoginView
 from django.views.generic import CreateView
 from django.shortcuts import render, redirect
 
+
 from .settings import *
 
 
 from Exchange.models import Books
-from Profile.forms import RegisterForm
+from Profile.forms import RegisterForm, CreateUserForm
 
 
 @login_required
@@ -29,7 +30,7 @@ class RegisterUser(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('index')
+        return redirect('create_profile')
 
 
 class LoginUser(LoginView):
@@ -70,3 +71,18 @@ def add_books(request):
         book.save()
 
     return render(request, 'books/add_books.html')
+
+
+class CreateProfile(CreateView):
+    form_class = CreateUserForm
+    template_name = 'registration/create_profile.html'
+    success_url = reverse_lazy('index')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return dict(list(context.items()))
+
+    def form_valid(self, form):
+        # Associate the profile with the current user
+        form.instance.user = self.request.user
+        return super().form_valid(form)

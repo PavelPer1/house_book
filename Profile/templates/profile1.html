@@ -41,8 +41,8 @@
 
                 </div>
                 <p>Имя: {{user.username}}</p>
-                <p>Email: {{user.email}}</p>
-                <p>Номер телефона: 123-456-7890</p>
+                <p>Email: {{user.profile.email}}</p>
+                <p>Номер телефона: {{user.profile.number}}</p>
 
                 <div class="logout-button">
                     <button class="logout-button" onclick="location.href= '{% url 'logout' %}?next=/profile'">Выйти</button>

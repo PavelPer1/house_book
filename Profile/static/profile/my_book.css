@@ -1,0 +1,203 @@
+.logo_div{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+.login-css {
+  margin-right: 20px;
+  margin-top: 10px;
+  height: 20px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 82px;
+  max-width: 82px;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  font: normal normal bold 16px/1 "Lucida Console", Monaco, monospace;
+  color: rgba(0,0,0,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: #ffffff;
+  -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+  font-family: 'Commissioner', sans-serif;
+}
+.logo{
+
+  height: 80px;
+  width: 220px;
+}
+.menu_header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.menu_header1{
+  margin-top: 30px;
+  width: 150;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+.register-css {
+    margin-top: 10px;
+    height: 20px;
+    margin-right: 20;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 120px;
+    max-width: 120px;
+    padding: 20px;
+    overflow: hidden;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    font: normal normal bold 16px/1 "Lucida Console", Monaco, monospace;
+    color: rgba(0,0,0,1);
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    background: #F8E642;
+    -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+    font-family: 'Commissioner', sans-serif;
+  }
+.reg{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0px;
+}
+.back-css{
+    margin-top: 40px;
+    font-family: 'Commissioner', sans-serif;
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    font: normal normal bold 16px/normal "Lucida Console", Monaco, monospace;
+    color: #0000;
+    text-indent: 10px;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: #F8E642;
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+    text-shadow: -1px -1px 0 rgba(0,0,0,1) ;
+    -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  .favor-css{
+    margin-top: 40px;
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    font: normal normal bold 16px/normal "Lucida Console", Monaco, monospace;
+    color: #ffffff;
+    text-indent: 10px;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: #6D1FEB;
+    font-family: 'Commissioner', sans-serif;
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+    -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  .header1{
+    /*background-color: aliceblue;*/
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+}
+    .header2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.katalog{
+margin-right: 200px;
+}
+
+.b{
+  font-size: 26px;
+}
+.favor-css{
+margin-left: 200px;
+}
+
+.a {
+    display: flex;
+    justify-content: row;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    margin: 20px;
+    width: 300px;
+    border-radius: 20px;
+    border: 2px solid #6D1FEB59;
+    font-family: 'Commissioner', sans-serif;
+}
+.announcement-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .announcement {
+    width: 308px;
+height: 419px;
+flex-shrink: 0;
+border-radius: 25px;
+background: #D9D9D9;
+box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.50);
+margin-top: 60px;
+    margin-left: 150px;
+
+}
+
+.penis{
+  width: 100%;
+  height: 1px;
+  background: #000;
+  margin-top: -10px;
+}

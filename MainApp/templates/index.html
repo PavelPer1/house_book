@@ -21,7 +21,7 @@
                 </div>
                 <div class='reg'>
                     {% if not request.user.is_authenticated %}
-                    <a href="{% url 'profile' %}"><nav class="login-css">Вход</nav></a>
+                    <a href="{% url 'login' %}"><nav class="login-css">Вход</nav></a>
                     <a href="{% url 'register' %}"><nav class="register-css">Регистрация</nav></a>
                     {% else %}
                     <a href="{% url 'profile' %}"><nav class="login-css">{{user.username}}</nav></a>

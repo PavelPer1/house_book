@@ -1,12 +1,12 @@
-from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-from django.urls import reverse_lazy
-from django.views.generic import FormView
-from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.views import LoginView
+from django.views.generic import CreateView
+from django.shortcuts import render, redirect
+
 from .settings import *
-from reportlab.lib.randomtext import objects
+
 
 from Exchange.models import Books
 from Profile.forms import RegisterForm
@@ -17,20 +17,33 @@ def login_view(request):
     return render(request, 'profile1.html')
 
 
-class RegisterView(FormView):
-    form_class = UserCreationForm
+class RegisterUser(CreateView):
+    form_class = RegisterForm
     template_name = 'registration/register.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('login')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return dict(list(context.items()))
 
     def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
+        user = form.save()
+        login(self.request, user)
+        return redirect('index')
+
+
+class LoginUser(LoginView):
+    form_class = AuthenticationForm
+    template_name = 'registration/login.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return dict(list(context.items()))
 
 
 def get_user_books(request):
     name_books = []
     for i in Books.objects.all():
-        print(i.user, request.user.username)
         if str(i.user) == str(request.user.username):
             name_books += [i.name]
     content = {

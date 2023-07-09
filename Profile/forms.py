@@ -1,9 +1,17 @@
+from django.contrib.admin import forms
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, User
+from django import forms
 
 
 class RegisterForm(UserCreationForm):
-    pass
+
+    class Meta:
+        model = User
+        fields = ('username', 'password1', 'password2')
+
+
+
 
 
 

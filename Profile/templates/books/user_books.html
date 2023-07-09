@@ -1,19 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
 
-    </style>
-</head>
-<body>
-    <div>
-        <h1>Книги пользователя {{ user.username }}</h1>
-        {% for i in name_books %}
-        <h3>Книга {{i}}</h3>
-        {% endfor %}
-        <a href="{% url 'add-books' %}"><h1>Добавить книгу</h1></a>
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'profile/my_book.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="header2">
+        <div class="katalog">
+            <button class="back-css">Каталог</button>
+        </div>
+        <div class="b"><h1>Мои книги</h1></div>
+        <div class="add"><a href="{% url 'add-books' %}"><button class="favor-css">Добавить +</button></a></div>
     </div>
-</body>
-</html>
+    <div class="penis">
+      <a></a>
+    </div>
+        <div class="announcement-container">
+            {% for i in name_books %}
+            <div class="announcement">
+                <h1>{{i}}</h1>
+                </div>
+            {% endfor %}
+        </div>
+
+{% endblock %}

@@ -17,8 +17,9 @@ from django.urls import reverse_lazy
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_URL = '/'
+LOGIN_REDIRECT_URL = reverse_lazy('profile')
+LOGIN_URL = reverse_lazy('index')
+LOGOUT_URL = reverse_lazy('index')
 
 
 # Quick-start development settings - unsuitable for production

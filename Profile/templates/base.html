@@ -1,0 +1,36 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'profile/profile1.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.cdnfonts.com/css/commissioner-2" rel="stylesheet">
+    {% block link %}{% endblock %}
+</head>
+    <body>
+        <div>
+            <header class="header1">
+                <div class="logo_div">
+                    <a href="{% url 'index' %}"><img src="{% static 'images/ff.png' %}" alt="BOOKSWAP" class="logo"></a>
+                </div>
+                <div class="menu_header">
+                    <a class="menu_header1" href="#">О нас</a>
+                    <a class="menu_header1" href="#">Для кого</a>
+                    <a class="menu_header1" href="#">Помощь</a>
+                </div>
+                <div class='reg'>
+                    {% if not request.user.is_authenticated %}
+                    <a href="{% url 'login' %}"><nav class="login-css">Вход</nav></a>
+                    <a href="{% url 'register' %}"><nav class="register-css">Регистрация</nav></a>
+                    {% else %}
+                    <a href="{% url 'profile' %}"><nav class="login-css">{{user.username}}</nav></a>
+                    {% endif %}
+                </div>
+            </header>
+                {% block content %}
+                {% endblock %}
+        </div>
+</body>
+</html>

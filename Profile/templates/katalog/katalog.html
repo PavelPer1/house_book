@@ -6,8 +6,12 @@
 {% endblock %}
 
 {% block content %}
+    <form action="{% url 'katalog' %}">
+        <p><input type="search" name="search" placeholder="Поиск">
+        <input type="submit" value="Найти"></p>
+  </form>
     {% for contact in page_obj %}
-        {{ contact.name }}<br>
+        {{ contact.name }}, {{contact.author}}<br>
     {% endfor %}
     <div class="pagination">
     <span class="step-links">

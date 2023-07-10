@@ -6,6 +6,7 @@ from django.core.paginator import Paginator
 from django.views.generic import CreateView
 from django.shortcuts import render, redirect
 
+from django.db.models import Q
 
 from .settings import *
 
@@ -90,8 +91,15 @@ class CreateProfile(CreateView):
 
 
 def get_katalog(request):
-    books = Books.objects.all()
-    paginator = Paginator(books, 21)
+    search_query = request.GET.get('search', '')
+
+    if search_query:
+        books = Books.objects.filter(Q(name__icontains=search_query) | Q(author__icontains=search_query) |
+                                     Q(genre__icontains=search_query))
+    else:
+        books = Books.objects.all()
+
+    paginator = Paginator(books, 3)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

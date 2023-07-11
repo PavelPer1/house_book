@@ -32,6 +32,7 @@
         <div class="content">
             <div class="buttons">
                 <a href="{% url 'my-books' %}"><input  type="button" class="enjoy-css" value="Мои книги" /></a>
+                <a href="{% url 'exchange' %}"><input type="button" class="enjoy-css" value="Мои обмены" /></a>
                 <a href="#"><input type="button" class="favor-css" value="Избранное" /></a>
                 <a href="#"><input type="button" class="enjoy-css" value="Отзывы" /></a>
             </div>
@@ -54,7 +55,7 @@
       </div>
 
       <div class="back-button">
-        <button class="back-css">К  каталогу</button>
+        <a href="{% url 'katalog' %}"><button class="back-css">К  каталогу</button>
       </div>
 </body>
 </html>

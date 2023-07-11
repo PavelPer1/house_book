@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'exchange/exchange.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'profile/my_book.css' %}">
+{% endblock %}
+{% block content %}
+      <div class="header2">
+        <div class="katalog">
+            <a href="{% url 'katalog' %}"><button class="back-css">Каталог</button></a>
+        </div>
+        <div class="b"><h1>Мои книги</h1></div>
+    </div>
+    <div class="penis">
+      <a></a>
+    </div>
+<div style="flex: block; margin-top:50px;">
+    {% for i in exchange %}
+      <div class="exchanges__content content">
+        <div class="content__item record">
+          <div class="record__info info _sub-main-text">
+            <span class="info__books"> {{i.one_book.name}} -- {{i.two_book.name}}</span>
+              {% if i.two_book.user != request.user %}
+            <span class="info__user">{{i.two_book.user}}</span>
+              {% else %}
+              <span class="info__user">{{i.one_book.user}}</span>
+              {% endif %}
+            <span class="info__date">{{i.date}}</span>
+          </div>
+          <span class="record__status _sub-main-text">{{status}}</span>
+          <a href="#" class="record__detail button _sub-main-text">ПОДРОБНЕЕ</a>
+        </div>
+          {% endfor %}
+      </div>
+{% endblock %}

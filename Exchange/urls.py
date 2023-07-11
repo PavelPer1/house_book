@@ -2,5 +2,5 @@ from django.urls import path, include
 from .views import *
 
 urlpatterns = [
-    path('', get_exchange, name='exchange')
+    path('exchange', get_exchange, name='exchange')
 ]

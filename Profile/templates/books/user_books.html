@@ -19,7 +19,8 @@
         <div class="announcement-container">
             {% for i in name_books %}
             <div class="announcement">
-                <h1>{{i}}</h1>
+                <img src="{{i.avatar}}">
+                <h1>{{i.name}}</h1>
                 </div>
             {% endfor %}
         </div>

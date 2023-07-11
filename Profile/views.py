@@ -48,7 +48,7 @@ def get_user_books(request):
     name_books = []
     for i in Books.objects.all():
         if str(i.user) == str(request.user.username):
-            name_books += [i.name]
+            name_books += [i]
     content = {
         'name_books': name_books
     }
@@ -62,13 +62,15 @@ def add_books(request):
         genre_books = request.POST.get('genre')
         description_books = request.POST.get('description')
         status_books = True
+        avatar = request.POST.get('avatar')
 
         book = Books(name=name_books,
                      author=author_books,
                      genre=genre_books,
                      description=description_books,
                      status=status_books,
-                     user_id=request.user.id
+                     user_id=request.user.id,
+                     avatar=avatar
                      )
         book.save()
 

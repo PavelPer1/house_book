@@ -21,6 +21,10 @@ LOGIN_REDIRECT_URL = reverse_lazy('profile')
 LOGIN_URL = reverse_lazy('index')
 LOGOUT_URL = reverse_lazy('index')
 
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+
+STATIC_URL = '/static/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 

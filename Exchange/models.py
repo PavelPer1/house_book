@@ -9,6 +9,7 @@ class Books(models.Model):
     genre = models.CharField(max_length=30)
     description = models.CharField(max_length=250)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    avatar = models.ImageField(upload_to='media/', null=True)
 
 
 class Exchange(models.Model):

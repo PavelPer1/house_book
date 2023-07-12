@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner&display=swap');
+
+/*FONTS*/
+
+body {
+    font-family: 'Commissioner', sans-serif;
+    color: #000;
+}
+
+/*RESET+NORMALIZE CSS*/
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    all: unset;
+}
+
+/*GENERAL STYLES*/
+
+.button {
+    text-align: center;
+    cursor: pointer;
+    border-radius: 225px;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100;
+}
+
+/*HEADER*/
+
+.header {
+    padding: 24px 120px 76px 120px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.header__logo {
+    justify-self: flex-start;
+}
+
+.nav {
+    display: flex;
+    gap: 117px;
+    justify-self: center;
+}
+
+.nav__item {
+    font-size: 30px;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav__item:hover::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #F8E642;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/*EDIT PROFILE PAGE*/
+
+.edit-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    padding: 30px 70px 100px 70px;
+    width: fit-content;
+    border-radius: 25px;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(109, 31, 235, 0.35);
+    height: 550;
+}
+
+.profile-card__title {
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.inputs__item {
+    border-radius: 225px;
+    border: 1px solid #000;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.50);
+    font-size: 30px;
+    font-weight: 200;
+    padding: 15px 70px;
+}
+
+.inputs__item._purple  {
+    background: #6D1FEB;
+    color: #FFF;
+}
+
+.inputs__item::placeholder {
+    color: inherit;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.upload {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.upload__placeholder {
+    color: #FFF;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.upload__input {
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+}
+
+.profile-card__submit {
+    padding: 30px 150px;
+    font-size: 30px;
+    font-weight: 400;
+    background: #F8E642;
+    border: none;
+}
+
+/*ADAPTIVE*/
+
+@media (max-width: 1690px) {
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+        padding: 24px 0px 20px 0px;
+    }
+
+    .header__logo {
+        justify-self: center;
+    }
+
+    .title {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        padding: 5px 0px 50px 0px;
+        gap: 20px;
+    }
+
+    .profile-card {
+
+    }
+
+}
+
+@media (max-width: 560px) {
+    .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-self: center;
+        align-items: center;
+    }
+
+    .header__logo {
+        width: 100%;
+    }
+
+    .form {
+        gap: 20px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .inputs__item {
+        width: 90%;
+        font-size: 15px;
+    }
+
+    .profile-card__title {
+        font-size: 30px;
+    }
+
+    .upload__placeholder {
+        font-size: 20px;
+    }
+
+    .profile-card__submit {
+        font-size: 30px;
+        padding: 30px 70px;
+    }
+}

@@ -3,10 +3,8 @@ from .views import *
 
 urlpatterns = [
     path('', get_main, name='index'),
-    
-    path('whome', go_who, name='who'),
-
-    path('help', go_help, name='helpme'),
-
-    path('whom', go_whom, name='whomme'),
+    path('who/', get_who, name='who'),
+    path('dliakogo/', get_dliakogo, name='dliakogo'),
+    path('help/', get_help, name='help')
 ]
+

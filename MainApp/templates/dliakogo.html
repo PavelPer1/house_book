@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/mainapp/dliakogo.css">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-    </header>
+
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'mainapp/dliakogo.css' %}">
+{% endblock %}
+
+{% block content %}
     <div class="head">
         <h1>Для кого</h1>
     </div>
@@ -47,5 +43,5 @@
                 в виде книги для друзей, семьи или коллег. </p>
         </div>
       </div>
-</body>
-</html>
+{% endblock %}
+

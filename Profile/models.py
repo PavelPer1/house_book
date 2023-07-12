@@ -7,4 +7,5 @@ class Profile(models.Model):
     avatar = models.ImageField(upload_to='media/')
     email = models.EmailField(max_length=250)
     number = models.CharField(max_length=50)
+    fio = models.CharField(max_length=100, null=True)
 

@@ -1,14 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block link %}
-<link rel="stylesheet" type="text/css" href="{% static 'profile/my_book.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'profile/create_profile.css' %}">
 {% endblock %}
 
 {% block content %}
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Сохранить</button>
+        <div class="edit-profile">
+      <div class="edit-profile__profile-card profile-card">
+        <span class="profile-card__title">Заполните профиль</span>
+        <div class="profile-card__form form">
+          <div class="form__inputs inputs">
+            <input class="inputs__item" type="text" placeholder="ФИО" name="fio" />
+            <input
+              class="inputs__item _purple"
+              type="email"
+              name="email"
+              placeholder="Email"
+            />
+            <input
+              class="inputs__item"
+              type="tel"
+              name="number"
+              placeholder="Номер телефона"
+            />
+          </div>
+          <div class="form__upload upload">
+            <span class="upload__placeholder">Загрузить</br>фото</span>
+            <input class="upload__input" type="file" name="avatar" />
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="profile-card__submit button">Сохранить</button>
+    </div>
     </form>
 
 {% endblock %}

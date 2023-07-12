@@ -16,8 +16,9 @@
                 </div>
                 <div class="menu_header">
                     <a class="menu_header1" href="{% url 'who' %}">О нас</a>
-                    <a class="menu_header1" href="{% url 'whomme' %}">Для кого</a>
-                    <a class="menu_header1" href="{% url 'helpme' %}">Помощь</a>
+                    <a class="menu_header1" href="{% url 'dliakogo' %}">Для кого</a>
+                    <a class="menu_header1" href="{% url 'help' %}">Помощь</a>
+
                 </div>
                 <div class='reg'>
                     {% if not request.user.is_authenticated %}

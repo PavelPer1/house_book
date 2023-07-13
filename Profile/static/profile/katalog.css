@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner&display=swap');
+
+/*FONTS*/
+
+body {
+    font-family: 'Commissioner', sans-serif;
+    color: #000;
+}
+
+/*RESET+NORMALIZE CSS*/
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    all: unset;
+}
+/*GENERAL STYLES*/
+
+._sub-main-text {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+._main-text {
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.button {
+    text-align: center;
+    cursor: pointer;
+    width: 279px;
+    height: 78px;
+    border-radius: 225px;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*HEADER*/
+
+.header {
+    padding: 24px 120px 85px 120px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.header__logo {
+    justify-self: flex-start;
+}
+
+.header__button {
+    background: #F8E642;
+    justify-self: flex-end;
+}
+
+.nav {
+    display: flex;
+    gap: 117px;
+    justify-self: center;
+}
+
+.nav__item {
+    font-size: 30px;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav__item:hover::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #F8E642;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/*CATALOG PAGE*/
+
+.title {
+    border-bottom: #000 solid 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 120px 120px 120px;
+}
+
+.title__text {
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.actions__item {
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.50);
+}
+
+.actions__item:hover {
+    border: 1px solid #6D1FEB;
+    box-shadow: 0px 4px 20px 0px rgba(109, 31, 235, 0.60);
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.action__title {
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.search {
+    position: relative;
+    width: 986px;
+    display: flex;
+}
+
+.search__input {
+    all: unset;
+    color: #000;
+    font-size: 45px;
+    font-weight: 500;
+}
+.search__input::placeholder {
+    color: #000;
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.search__button {
+    cursor: pointer;
+    border-radius: 13px;
+    border: 2px solid #000;
+    background: #FFF;
+    height: 102%;
+    padding: 0px 20px;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+}
+
+.search:hover .search__button {
+    border: 2px solid #6D1FEB;
+}
+
+.books {
+    padding: 50px 0px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.book{
+    border-radius: 25px;
+    box-shadow: 0px 4px 20px rgba(109, 31, 235, 0.60);
+}
+
+/*ADAPTIVE*/
+
+@media (max-width: 1690px) {
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+        padding: 24px 0px 20px 0px;
+    }
+
+    .header__logo {
+        justify-self: center;
+    }
+
+    .header__button {
+        justify-self: center;
+    }
+
+    .title {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        padding: 5px 0px 50px 0px;
+        gap: 20px;
+    }
+
+    .books {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .search {
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 560px) {
+    .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-self: center;
+        align-items: center;
+    }
+
+    .header__logo {
+        width: 100%;
+    }
+}

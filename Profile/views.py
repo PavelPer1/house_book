@@ -13,7 +13,7 @@ from django.db.models import Q
 
 from .settings import *
 
-
+from .models import FavoritesUser
 from Exchange.models import Books
 from Profile.forms import RegisterForm, CreateUserForm
 
@@ -114,4 +114,16 @@ def get_katalog(request):
 
 
 def get_favorites(request):
-    return render(request, 'favorites.html')
+    books = FavoritesUser.objects.all()
+    context = {
+        'name_books': books
+    }
+    return render(request, 'favorites.html', context)
+
+
+def get_book(request, path):
+    book = Books.objects.filter(id=path)
+    context = {
+        'book': book
+    }
+    return render(request, 'books/book.html', context)

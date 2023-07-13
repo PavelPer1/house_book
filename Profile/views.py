@@ -104,10 +104,14 @@ def get_katalog(request):
     else:
         books = Books.objects.all()
 
-    paginator = Paginator(books, 3)
+    books = [i for i in books if i.user != request.user]
+
+    paginator = Paginator(books, 9)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'katalog/katalog.html', {'page_obj': page_obj})
 
 
+def get_favorites(request):
+    return render(request, 'favorites.html')

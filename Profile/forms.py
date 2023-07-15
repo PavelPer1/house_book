@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser, User
 from django import forms
 from django.forms import ModelForm
 
+from Exchange.models import Exchange
 from .models import *
 
 
@@ -19,6 +20,13 @@ class CreateUserForm(ModelForm):
     class Meta:
         model = Profile
         fields = ('avatar', 'email', 'number')
+
+
+class ExchangeForm(ModelForm):
+
+    class Meta:
+        model = Exchange
+        fields = ('one_book', 'two_book', 'status')
 
 
 

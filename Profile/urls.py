@@ -13,7 +13,10 @@ urlpatterns = [
     path('create_profile', CreateProfile.as_view(), name='create_profile'),
     path('katalog/', get_katalog, name='katalog'),
     path('favorites', get_favorites, name='favorites'),
-    path('book/<path>', get_book, name='book')
+    path('book/<path>', get_book, name='book'),
+    path('exchange_my_book', get_ex, name='ex')
+
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

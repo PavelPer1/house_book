@@ -1,4 +1,5 @@
 import os
+import time
 
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
@@ -8,14 +9,15 @@ from django.core.paginator import Paginator
 from django.views.generic import CreateView
 from django.shortcuts import render, redirect
 from PIL import Image
+from datetime import datetime
 
 from django.db.models import Q
 
 from .settings import *
 
 from .models import FavoritesUser
-from Exchange.models import Books
-from Profile.forms import RegisterForm, CreateUserForm
+from Exchange.models import Books, Exchange
+from Profile.forms import RegisterForm, CreateUserForm, ExchangeForm
 
 
 @login_required
@@ -123,7 +125,53 @@ def get_favorites(request):
 
 def get_book(request, path):
     book = Books.objects.filter(id=path)
+    for i in book:
+        book_new = i
+        book_id = i.id
+    status = f'{request.user.id}'
+    my_book = Books.objects.filter(user_id=request.user.id)
     context = {
-        'book': book
+        'my_book': my_book,
+        'book': book_new
     }
+    ex = Exchange(
+        one_book_id=book_id,
+        status=status
+    )
+    ex.save()
     return render(request, 'books/book.html', context)
+
+
+def get_ex(request):
+    name_books = []
+    for i in Books.objects.all():
+        if str(i.user) == str(request.user.username):
+            name_books += [i]
+    content = {
+        'name_books': name_books
+    }
+    if request.method == "POST":
+        for j in Books.objects.all():
+            if str(j.id) in request.POST:
+                book_id = j.id
+        for i in Exchange.objects.all():
+            print(i.status)
+            if int(i.status) == request.user.id:
+                exchange_two = i.id
+                print(exchange_two)
+        exch = Exchange.objects.get(id=exchange_two)
+        exch.status = 'В процессе'
+        exch.save(update_fields=["status", "two_book"])
+        exch1 = Exchange.objects.get(id=exchange_two)
+        exch1.two_book_id = int(book_id)
+        exch1.save(update_fields=["two_book"])
+        for f in Exchange.objects.all():
+            if f.status != 'В процессе':
+                f.delete()
+    return render(request, 'books/exchange_books.html', content)
+
+
+
+
+
+

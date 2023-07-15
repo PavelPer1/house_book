@@ -116,7 +116,10 @@ def get_katalog(request):
 
 
 def get_favorites(request):
-    books = FavoritesUser.objects.all()
+    books = []
+    for i in FavoritesUser.objects.all():
+        if str(i.user) == str(request.user.username):
+            books += [i]
     context = {
         'name_books': books
     }

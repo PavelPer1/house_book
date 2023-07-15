@@ -156,9 +156,12 @@ def get_ex(request):
                 book_id = j.id
         for i in Exchange.objects.all():
             print(i.status)
-            if int(i.status) == request.user.id:
-                exchange_two = i.id
-                print(exchange_two)
+            try:
+                if int(i.status) == request.user.id:
+                    exchange_two = i.id
+                    print(exchange_two)
+            except:
+                pass
         exch = Exchange.objects.get(id=exchange_two)
         exch.status = 'В процессе'
         exch.save(update_fields=["status", "two_book"])

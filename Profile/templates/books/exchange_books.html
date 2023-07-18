@@ -1,16 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form method="post">{% csrf_token %}
-    {% for i in name_books %}
-        <button name="{{i.id}}" type="submit">{{i.name}}</button>
-    {% endfor %}
-</form>
+
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'profile/exchange1.css' %}">
+{% endblock %}
+
+{% block content %}
+    <header class="header2">Выберите книгу для обмена</header>
+    <div class="penis">
+        <a></a>
+    </div>
+    <div class="announcement-container">
+        <form method="post" class="announcement-container">
+
+            {% csrf_token %}
+            {% for i in name_books %}
+
+            <div class="info">
+                <button name="{{i.id}}" type="submit" class="pop">
+                <div class="content_book">
+                    <div class="image-container"><img src="{{ MEDIA_ROOT }}/media/media/{{i.avatar}}"></div>
+                    <div class="informations">
+                        {{i.name}}<br>
+                </div>
+                </div>
+                </button>
+            </div>
+
+            {% endfor %}
+
+        </form>
+    </div>
+
 <a href="{% url 'katalog' %}">К катологу</a>
 <a href="{% url 'exchange' %}" >Мои обмены</a>
-</body>
-</html>
+{% endblock %}

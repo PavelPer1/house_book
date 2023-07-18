@@ -24,7 +24,13 @@
         </div>
         <div class="content_book">Автор:{{book.author}}<br>Жанр:{{book.genre}}</div>
     </div>
+    {% if book.user_id != request.user.id %}
     <div class="header2">
         <a href="{% url 'ex' %}"><button class="back-css">Обмен</button></a>
     </div>
+    {% else %}
+    <div class="header2">
+        <a href="#"><button class="back-css">Оставить отзыв</button></a>
+    </div>
+    {% endif %}
 {% endblock %}

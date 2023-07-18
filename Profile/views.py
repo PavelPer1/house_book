@@ -1,6 +1,3 @@
-import os
-import time
-
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
@@ -8,8 +5,6 @@ from django.contrib.auth.views import LoginView
 from django.core.paginator import Paginator
 from django.views.generic import CreateView
 from django.shortcuts import render, redirect
-from PIL import Image
-from datetime import datetime
 
 from django.db.models import Q
 
@@ -140,6 +135,7 @@ def get_book(request, path):
         except FavoritesUser.DoesNotExist:
             favorite = FavoritesUser(user_id=request.user.id, book_id=int(path))
             favorite.save()
+            return redirect('favorites')
             print('Object added to favorites')
     ex = Exchange(
         one_book_id=int(path),

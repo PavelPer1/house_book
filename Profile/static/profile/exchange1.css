@@ -1,0 +1,62 @@
+.penis{
+  width: 100%;
+  height: 1px;
+  background: #000;
+  margin-top: 40px;
+}
+.announcement-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  flex-direction: row;
+}
+.content_book{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 308px;
+  height: 419px;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: #D9D9D9;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.50);
+  font-family: 'Commissioner', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
+  flex-direction: column;
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto
+
+}
+
+.content_book img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-border-radius: 0 0 0 0;
+}
+
+.informations{
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto
+
+}
+.info{
+display: flex;
+  padding: 30px;
+  justify-content: center;
+}
+.header2{
+  font-size: 45px;
+  font-family: 'Commissioner', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}

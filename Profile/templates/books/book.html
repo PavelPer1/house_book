@@ -1,18 +1,28 @@
+{% extends 'base.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{% static 'profile/my-book.css' %}">
-    <meta charset="UTF-8">
-    <title>Книга</title>
-</head>
-<body>
-    <h1>{{ book.name }}</h1>
-<h1>{{book.author}}</h1>
-<h1>{{book.genre}}</h1>
-<h1>{{book.description}}</h1>
-<h2>{{book.user.profile.email}}</h2>
-<h2>{{book.user.profile.number}}</h2>
-<h2>{{book.user}}</h2>
-    <a href="{% url 'ex' %}"><h1>Предложить обмен</h1></a>
-</body>
-</html>
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'profile/my_book11.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="header2">
+        <div class="katalog">
+            <button class="back-css">Каталог</button>
+        </div>
+        <div class="b"><h1>{{ book.name }}</h1></div>
+        <div class="add"><button class="favor-css">Избранное</button></div>
+    </div>
+    <div class="penis">
+      <a></a>
+    </div>
+    <div class="announcement-container">
+        <div class="content_book">{{ book.name }}<br> {{book.user.profile.email}} <br> {{book.user.profile.number}}</div>
+        <div class="content_book">
+            <div class="image-container"></dib><img src="{{ MEDIA_ROOT }}/media/media/{{book.avatar}}"></div>
+        </div>
+        <div class="content_book">Автор:{{book.author}}<br>Жанр:{{book.genre}}</div>
+    </div>
+    <div class="header2">
+        <a href="{% url 'ex' %}"><button class="back-css">Обмен</button></a>
+    </div>
+{% endblock %}

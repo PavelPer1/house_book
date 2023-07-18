@@ -19,7 +19,7 @@ class CreateUserForm(ModelForm):
 
     class Meta:
         model = Profile
-        fields = ('avatar', 'email', 'number')
+        fields = ('avatar', 'email', 'number', 'fio')
 
 
 class ExchangeForm(ModelForm):

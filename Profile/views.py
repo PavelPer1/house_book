@@ -17,7 +17,7 @@ from .settings import *
 
 from .models import FavoritesUser
 from Exchange.models import Books, Exchange
-from Profile.forms import RegisterForm, CreateUserForm, ExchangeForm
+from Profile.forms import RegisterForm, CreateUserForm, ExchangeForm, FavoritesAdd
 
 
 @login_required
@@ -78,6 +78,7 @@ def add_books(request):
                      avatar=avatar
                      )
         book.save()
+        return redirect('my-books')
 
     return render(request, 'books/add_books.html')
 
@@ -127,42 +128,39 @@ def get_favorites(request):
 
 
 def get_book(request, path):
-    book = Books.objects.filter(id=path)
-    for i in book:
-        book_new = i
-        book_id = i.id
-    status = f'{request.user.id}'
-    my_book = Books.objects.filter(user_id=request.user.id)
     context = {
-        'my_book': my_book,
-        'book': book_new
+        'my_book': Books.objects.filter(user_id=request.user.id),
+        'book': Books.objects.get(id=path)
     }
+    if request.method == 'POST' and 'add_fav' in request.POST:
+        try:
+            favorite = FavoritesUser.objects.get(user=request.user, book_id=int(path))
+            # Если объект уже существует, вы можете добавить соответствующую логику обработки здесь
+            print('Object already exists')
+        except FavoritesUser.DoesNotExist:
+            favorite = FavoritesUser(user_id=request.user.id, book_id=int(path))
+            favorite.save()
+            print('Object added to favorites')
     ex = Exchange(
-        one_book_id=book_id,
-        status=status
+        one_book_id=int(path),
+        status=f'{request.user.id}'
     )
     ex.save()
     return render(request, 'books/book.html', context)
 
 
 def get_ex(request):
-    name_books = []
-    for i in Books.objects.all():
-        if str(i.user) == str(request.user.username):
-            name_books += [i]
     content = {
-        'name_books': name_books
+        'name_books': Books.objects.filter(user_id=request.user.id)
     }
     if request.method == "POST":
         for j in Books.objects.all():
             if str(j.id) in request.POST:
                 book_id = j.id
         for i in Exchange.objects.all():
-            print(i.status)
             try:
                 if int(i.status) == request.user.id:
                     exchange_two = i.id
-                    print(exchange_two)
             except:
                 pass
         exch = Exchange.objects.get(id=exchange_two)

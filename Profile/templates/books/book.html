@@ -7,10 +7,12 @@
 {% block content %}
 <div class="header2">
         <div class="katalog">
-            <button class="back-css">Каталог</button>
+            <a href="{% url 'katalog' %}"><button class="back-css">Каталог</button></a>
         </div>
         <div class="b"><h1>{{ book.name }}</h1></div>
-        <div class="add"><button class="favor-css">Избранное</button></div>
+     <form method="post">{% csrf_token %}
+        <div class="add"><button class="favor-css" name="add_fav" type="submit">Избранное +</button></div>
+     </form>
     </div>
     <div class="penis">
       <a></a>

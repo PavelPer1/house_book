@@ -29,6 +29,13 @@ class ExchangeForm(ModelForm):
         fields = ('one_book', 'two_book', 'status')
 
 
+class FavoritesAdd(ModelForm):
+
+    class Meta:
+        model = FavoritesUser
+        fields = ('book', 'user')
+
+
 
 
 

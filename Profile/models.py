@@ -12,6 +12,7 @@ class Profile(models.Model):
 
 
 class FavoritesUser(models.Model):
+    id = models.AutoField(primary_key=True, default=None)
     book = models.ForeignKey(Books, on_delete=models.CASCADE, null=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 

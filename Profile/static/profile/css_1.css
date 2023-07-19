@@ -1,228 +1,213 @@
-. bg-color {
-    background-color: #B7DF84;
-}
-. body{
-    background-color: #B7DF84
-}
-.form-2 {
-    /* Size and position */
-    width: 340px;
-    margin: 60px auto 30px;
-    padding: 15px;
-    position: relative;
+@import url('https://fonts.googleapis.com/css2?family=Commissioner&display=swap');
 
-    /* Styles */
-    background: #fffaf6;
-    border-radius: 4px;
-    color: #7e7975;
-    box-shadow:
-        0 2px 2px rgba(0,0,0,0.2),
-        0 1px 5px rgba(0,0,0,0.2),
-        0 0 0 12px rgba(255,255,255,0.4);
-}
-.form-2 h1 {
-    font-size: 15px;
-    font-weight: bold;
-    color: #bdb5aa;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #EBE6E2;
-    text-shadow: 0 2px 0 rgba(255,255,255,0.8);
-    box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+/*FONTS*/
+
+body {
+    font-family: 'Commissioner', sans-serif;
+    color: #000;
 }
 
-.form-2 h1 .log-in,
-.form-2 h1 .sign-up {
-    display: inline-block;
-    text-transform: uppercase;
+/*RESET+NORMALIZE CSS*/
+
+* {
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.form-2 h1 .log-in {
-    color: #6c6763;
-    padding-right: 2px;
+a {
+    all: unset;
 }
 
-.form-2 h1 .sign-up {
-    color: #ffb347;
-    padding-left: 2px;
-}
-.form-2 .float {
-    width: 50%;
-    float: left;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255,255,255,1);
-}
-
-.form-2 .float:first-of-type {
-    padding-right: 5px;
-}
-
-.form-2 .float:last-of-type {
-    padding-left: 5px;
-}
-.form-2 label {
-    display: block;
-    padding: 0 0 5px 2px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 400;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-    font-size: 11px;
-}
-
-.form-2 label i {
-    margin-right: 5px; /* Gap between icon and text */
-    display: inline-block;
-    width: 10px;
-}
-.form-2 input[type=text],
-.form-2 input[type=password] {
-    font-family: 'Lato', Calibri, Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    display: block;
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 5px;
-    border: 3px solid #ebe6e2;
-    border-radius: 5px;
-    transition: all 0.3s ease-out;
-}
-.form-2 input[type=text]:hover,
-.form-2 input[type=password]:hover {
-    border-color: #CCC;
-}
-
-.form-2 label:hover ~ input {
-    border-color: #CCC;
-}
-
-.form-2 input[type=text]:focus,
-.form-2 input[type=password]:focus {
-    border-color: #BBB;
-    outline: none; /* Remove Chrome's outline */
-}
-.clearfix:after {
-    content: "";
-    clear: both;
-}
-
-.form-2 input[type=submit],
-.form-2 .log-twitter {
-    /* Size and position */
-    width: 49%;
-    height: 38px;
-    float: left;
-    position: relative;
-
-    /* Styles */
-    box-shadow: inset 0 1px rgba(255,255,255,0.3);
-    border-radius: 3px;
-    cursor: pointer;
-
-    /* Font styles */
-    font-family: 'Lato', Calibri, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 38px; /* Same as height */
-    text-align: center;
-    font-weight: bold;
-}
-
-.form-2 input[type=submit] {
-    margin-left: 1%;
-    background: linear-gradient(#fbd568, #ffb347);
-    border: 1px solid #f4ab4c;
-    color: #996319;
-    text-shadow: 0 1px rgba(255,255,255,0.3);
-}
-.form-2 input[type=submit]:hover,
-.form-2 .log-twitter:hover {
-    box-shadow:
-        inset 0 1px rgba(255,255,255,0.3),
-        inset 0 20px 40px rgba(255,255,255,0.15);
-}
-
-.form-2 input[type=submit]:active,
-.form-2 .log-twitter:active{
-    top: 1px;
-}
-.no-boxshadow .form-2 input[type=submit]:hover {
-    background: #ffb347;
-}
-
-.no-boxshadow .form-2 .log-twitter:hover {
-    background: #2a8ac4;
-}
-
-.div_vaer {
-    justify-content: flex-start;
-    display: flex;
-    clear: both;
-    content: "";
-}
-
-
-.form-2 .log-twitter {
-    margin-right: 1%;
-    background: linear-gradient(#34a5cf, #2a8ac4);
-    border: 1px solid #2b8bc7;
-    color: #ffffff;
-    text-shadow: 0 -1px rgba(0,0,0,0.3);
-    text-decoration: none;
-}
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+/*GENERAL STYLES*/
 
 .button {
-  /* Сбрасываем дефолтные стили */
-  border: none;
-  outline: none;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 16px;
-  /* Можно также использовать любые встроенные и кастомные шрифты, например, отсюда  */
-  font-family: Roboto, Verdana, Tahoma, sans;
-  /* Тут можно поэкспериментировать */
-  padding: 12px 16px;
-  border-radius: 100px;
-  color: #fff;
-}
-.button i {
-  margin-right: 4px;
-}
-.button + .button {
-  margin-left: 6px;
-}
-.button.blue {
-  background: #2196F3;
-
-}
-.button.purple {
-  background: #9b59b6;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 225px;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.button:hover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-.button:hover.blue {
-  background: #39a1f4;
-}
-.button:hover.purple {
-  background: #a66bbe;
-}
-.button:active {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-.button:active.blue {
-  background: #0d8aee;
-}
-.button:active.purple {
-  background: #8f4bab;
+/*HEADER*/
+
+.header {
+    padding: 24px 120px 62px 120px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    justify-items: center;
 }
 
-div {
-  margin: 24px;
-  text-align: center;
+.header__logo {
+    justify-self: flex-start;
+}
+
+.nav {
+    display: flex;
+    gap: 117px;
+    justify-self: center;
+}
+
+.nav__item {
+    font-size: 30px;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav__item:hover::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #F8E642;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/*LOGIN PAGE*/
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 600px;
+    height: 644px;
+    border-radius: 35px;
+    background-color: rgba(159, 43, 104, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 69px;
+}
+
+.card__title {
+    color: #FFF;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.footer__login {
+    width: 546px;
+    height: 85px;
+    border-radius: 50px;
+    background: #F8E642;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form__input {
+    all: unset;
+    box-sizing: border-box;
+    width: 546px;
+    height: 85px;
+    border-radius: 50px;
+    border: 5px solid #FFF;
+    background: transparent;
+    color: #FFF;
+    font-size: 35px;
+    font-weight: 500;
+    padding: 21px 10px 21px 92px;
+}
+
+.form__input::placeholder {
+    color: #FFF;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 47px;
+}
+
+.text {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.text__question {
+    color: #FFF;
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.text__link {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.text__link:hover::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #F8E642;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/*ADAPTIVE*/
+
+@media (max-width: 1690px) {
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+        padding: 24px 0px 20px 0px;
+    }
+
+    .header__logo {
+        justify-self: center;
+    }
+
+}
+
+@media (max-width: 560px) {
+    .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-self: center;
+        align-items: center;
+    }
+
+    .header__logo {
+        width: 100%;
+    }
+
+    .text {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__login {
+        width: 90%;
+    }
+    
+    .form__input {
+        padding: 21px 10px 21px 10px;
+        width: 100%;
+    }
 }

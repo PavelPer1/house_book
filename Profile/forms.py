@@ -36,6 +36,13 @@ class FavoritesAdd(ModelForm):
         fields = ('book', 'user')
 
 
+class AddBooks(ModelForm):
+
+    class Meta:
+        model = Books
+        fields = ('name', 'author', 'genre', 'status', 'description', 'user', 'avatar')
+
+
 
 
 

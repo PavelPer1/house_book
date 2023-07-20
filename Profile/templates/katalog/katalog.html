@@ -25,7 +25,7 @@
             {% for i in page_obj %}
             <a href="../book/{{i.id}}">
             <div class="announcement">
-                <img height="300" width="307" style="padding:20px;" src="{{ MEDIA_ROOT }}/media/media/{{i.avatar}}">
+                <img height="300" width="307" style="padding:20px;" src="{{ MEDIA_ROOT }}/media/media/book/{{i.avatar}}">
                 <h2 style="margin-left:12px;">{{i.name}}</h2>
                 <h2 style="margin-left:12px;">{{i.author}}</h2>
                 </div>

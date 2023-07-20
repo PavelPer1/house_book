@@ -9,38 +9,35 @@
         <link rel="stylesheet" href="{% static 'profile/css_register.css'%}">
   </head>
   <body>
-      <div class="testbox">
-  <h1>Registration</h1>
 
   <form method="post">
     {% csrf_token %}
-      <hr>
-    <div class="accounttype">
-      <input type="radio" value="None" id="radioOne" name="account" checked/>
-      <label for="radioOne" class="radio" chec>Personal</label>
-      <input type="radio" value="None" id="radioTwo" name="account" />
-      <label for="radioTwo" class="radio">Company</label>
+    <div class="login">
+      <div class="login__card card">
+        <div class="card__title">Регистрация</div>
+        <div class="card__form form">
+          <input class="form__input" type="text" name="username" placeholder="Введите логин" />
+          <input
+            class="form__input"
+            type="password"
+            name="password1"
+            placeholder="Введите пароль"
+          />
+          <input
+            class="form__input"
+            type="password"
+            name="password2"
+            placeholder="Повторите пароль"
+          />
+        </div>
+        <div class="card__footer footer">
+          <button class="footer__login">Зарегистрироваться</button>
+          <div class="footer__text text">
+            <span class="text__question">Уже есть аккаунт?</span>
+            <a class="text__link" href="{% url 'login' %}">Войти</a>
+          </div>
+        </div>
+      </div>
     </div>
-
-  <hr>
-
-
-  <input type="text" name="username" id="username" placeholder="Name" required/>
-
-  <input type="password" name="password1" id="12" placeholder="Password" required/>
-
-    <input type="password" name="password2" id="16" placeholder="Password 2" required/>
-  <div class="gender">
-    <input type="radio" value="None" id="male" name="gender" checked/>
-    <label for="male" class="radio" chec>Male</label>
-    <input type="radio" value="None" id="female" name="gender" />
-    <label for="female" class="radio">Female</label>
-   </div>
-   <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
-   <input type="submit" class="button"/>
-    {{ form.errors }}
-
-  </form>
-</div>
   </body>
 </html>

@@ -18,9 +18,9 @@
       <a></a>
     </div>
     <div class="announcement-container">
-        <div class="content_book">{{ book.name }}<br> {{book.user.profile.email}} <br> {{book.user.profile.number}}</div>
+        <div class="content_book">Контактные данные:<br>{{ book.user.profile.fio }}<br> {{book.user.profile.email}} <br> {{book.user.profile.number}}</div>
         <div class="content_book">
-            <div class="image-container"></dib><img src="{{ MEDIA_ROOT }}/media/media/{{book.avatar}}"></div>
+            <div class="image-container"></dib><img src="{{ MEDIA_ROOT }}/media/media/book/{{book.avatar}}"></div>
         </div>
         <div class="content_book">Автор:{{book.author}}<br>Жанр:{{book.genre}}</div>
     </div>

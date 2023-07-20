@@ -2,9 +2,11 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
+from django.core.files.storage import FileSystemStorage
 from django.core.paginator import Paginator
 from django.views.generic import CreateView
 from django.shortcuts import render, redirect
+import requests
 
 from django.db.models import Q
 
@@ -12,7 +14,7 @@ from .settings import *
 
 from .models import FavoritesUser
 from Exchange.models import Books, Exchange
-from Profile.forms import RegisterForm, CreateUserForm, ExchangeForm, FavoritesAdd
+from Profile.forms import RegisterForm, CreateUserForm, ExchangeForm, FavoritesAdd, AddBooks
 
 
 @login_required
